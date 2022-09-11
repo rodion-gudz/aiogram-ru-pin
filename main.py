@@ -20,11 +20,11 @@ class TelegraphRenderer(mistune.HTMLRenderer):
             html = '<ol'
             if start is not None:
                 html += ' start="' + str(start) + '"'
-            return html + '>' + text + '</ol>'
-        return '<ul>' + text + '</ul>'
+            return f'{html}>{text}</ol>'
+        return f'<ul>{text}</ul>'
 
     def list_item(self, text, level):
-        return '<li>' + text + '</li>'
+        return f'<li>{text}</li>'
 
 
 async def main(args: str):
